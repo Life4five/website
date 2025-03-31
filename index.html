@@ -2,75 +2,85 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Пиксельная рисовалка</title>
+  <title>Life4five</title>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      margin-bottom: 10px;
-    }
-    .palette {
-      margin-bottom: 20px;
+    * { margin: 0; padding: 0; }
+    canvas { display: block; }
+    #palette {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 5px;
+      border-radius: 5px;
     }
     .color {
-      display: inline-block;
       width: 30px;
       height: 30px;
-      margin: 0 5px;
+      display: inline-block;
+      cursor: pointer;
       border: 2px solid #000;
-      cursor: pointer;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(16, 20px);
-      grid-gap: 1px;
-    }
-    .pixel {
-      width: 20px;
-      height: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      cursor: pointer;
+      margin-right: 5px;
     }
   </style>
 </head>
 <body>
-  <h1>Сайт в разработке: Пиксельная рисовалка</h1>
-  <div class="palette">
+  <div id="palette">
     <div class="color" data-color="#000000" style="background-color: #000000;"></div>
     <div class="color" data-color="#FF0000" style="background-color: #FF0000;"></div>
     <div class="color" data-color="#00FF00" style="background-color: #00FF00;"></div>
     <div class="color" data-color="#0000FF" style="background-color: #0000FF;"></div>
     <div class="color" data-color="#FFFF00" style="background-color: #FFFF00;"></div>
   </div>
-  <div class="grid" id="grid"></div>
+  <canvas id="canvas"></canvas>
   <script>
-    let currentColor = "#000000"; // Текущий выбранный цвет (current color)
-    const paletteElements = document.querySelectorAll('.color');
-    paletteElements.forEach(elem => {
-      elem.addEventListener('click', () => {
-        currentColor = elem.getAttribute('data-color');
-        // Немного визуального эффекта – обводка выбранного цвета
-        paletteElements.forEach(c => c.style.border = "2px solid #000");
-        elem.style.border = "2px solid #FFF";
-      });
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    let drawing = false;
+    let currentColor = '#000000';
+    
+    canvas.addEventListener('mousedown', (e) => {
+      drawing = true;
+      ctx.beginPath();
+      ctx.moveTo(e.clientX, e.clientY);
     });
     
-    const grid = document.getElementById('grid');
-    // Создаем сетку: 16x16 пикселей
-    for (let i = 0; i < 16 * 16; i++) {
-      const pixel = document.createElement('div');
-      pixel.classList.add('pixel');
-      pixel.addEventListener('click', () => {
-        pixel.style.backgroundColor = currentColor;
+    canvas.addEventListener('mousemove', (e) => {
+      if (drawing) {
+        ctx.lineTo(e.clientX, e.clientY);
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      }
+    });
+    
+    canvas.addEventListener('mouseup', () => {
+      drawing = false;
+    });
+    
+    canvas.addEventListener('mouseleave', () => {
+      drawing = false;
+    });
+    
+
+    const colors = document.querySelectorAll('.color');
+    colors.forEach(colorElem => {
+      colorElem.addEventListener('click', () => {
+        currentColor = colorElem.getAttribute('data-color');
+        colors.forEach(elem => elem.style.border = '2px solid #000');
+        colorElem.style.border = '2px solid #FFF';
       });
-      grid.appendChild(pixel);
-    }
+    });
   </script>
 </body>
 </html>
