@@ -81,7 +81,7 @@ function generateRandomRows() {
   const tbody = document.querySelector("#featureTable tbody");
   tbody.innerHTML = "";
   
-  const rowCount = Math.floor(Math.random() * 5) + 8;
+  const rowCount = Math.floor(Math.random() * 5) + 4;
   
   for (let i = 0; i < rowCount; i++) {
     const tr = document.createElement("tr");
