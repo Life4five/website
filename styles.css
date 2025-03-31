@@ -43,3 +43,19 @@ th {
 tbody tr:nth-child(even) {
   background-color: #fafafa;
 }
+
+/* Гибкая вёрстка для телефонов */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 20px;
+  }
+  table, th, td {
+    font-size: 14px;
+  }
+}
