@@ -2,37 +2,75 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт в разработке</title>
+  <title>Пиксельная рисовалка</title>
   <style>
-    /* Стиль (CSS - Cascading Style Sheets) для центрирования и базового оформления */
     body {
-      margin: 0;
-      padding: 0;
+      font-family: sans-serif;
+      margin: 20px;
       display: flex;
-      justify-content: center; /* по горизонтали (horizontal alignment) */
-      align-items: center;     /* по вертикали (vertical alignment) */
-      height: 100vh;
-      background-color: #f0f0f0;
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      text-align: center;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 10px;
     }
-    p {
-      font-size: 1.2rem;
-      color: #555;
+    .palette {
+      margin-bottom: 20px;
+    }
+    .color {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      border: 2px solid #000;
+      cursor: pointer;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(16, 20px);
+      grid-gap: 1px;
+    }
+    .pixel {
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Скоро будет!</h1>
-    <p>Наш сайт находится в разработке. Проверьте позже, будет круто!</p>
+  <h1>Сайт в разработке: Пиксельная рисовалка</h1>
+  <div class="palette">
+    <div class="color" data-color="#000000" style="background-color: #000000;"></div>
+    <div class="color" data-color="#FF0000" style="background-color: #FF0000;"></div>
+    <div class="color" data-color="#00FF00" style="background-color: #00FF00;"></div>
+    <div class="color" data-color="#0000FF" style="background-color: #0000FF;"></div>
+    <div class="color" data-color="#FFFF00" style="background-color: #FFFF00;"></div>
   </div>
+  <div class="grid" id="grid"></div>
+  <script>
+    let currentColor = "#000000"; // Текущий выбранный цвет (current color)
+    const paletteElements = document.querySelectorAll('.color');
+    paletteElements.forEach(elem => {
+      elem.addEventListener('click', () => {
+        currentColor = elem.getAttribute('data-color');
+        // Немного визуального эффекта – обводка выбранного цвета
+        paletteElements.forEach(c => c.style.border = "2px solid #000");
+        elem.style.border = "2px solid #FFF";
+      });
+    });
+    
+    const grid = document.getElementById('grid');
+    // Создаем сетку: 16x16 пикселей
+    for (let i = 0; i < 16 * 16; i++) {
+      const pixel = document.createElement('div');
+      pixel.classList.add('pixel');
+      pixel.addEventListener('click', () => {
+        pixel.style.backgroundColor = currentColor;
+      });
+      grid.appendChild(pixel);
+    }
+  </script>
 </body>
 </html>
