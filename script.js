@@ -1,10 +1,24 @@
 const terms = [
-  "Tensor", "Backpropagation", "Weight Matrix", "CrossEntropy", "Epoch",
-  "Noise Injection", "GPT", "Feature Map", "LSTM", "DataFrame", "ROC-AUC",
-  "Hidden Layer", "Sigmoid", "Overfitting", "RandomForest", "Normalization",
-  "Hyperparameter", "Latent Space", "Softmax", "Clustering", "PyTorch",
-  "Gradient Descent", "loss++", "∇θ", "404 Accuracy"
+  "Tensor", "Backpropagation", "CrossEntropy", "Gradient Descent", "LSTM", "CNN", "RNN",
+  "Transformer", "Self-Attention", "Attention Mask", "Bias", "Activation Function",
+  "ReLU", "Sigmoid", "Softmax", "Tanh", "Dropout", "BatchNorm", "LayerNorm",
+  "Weight Decay", "Vanishing Gradient", "Exploding Gradient", "∇θ", "θ", "∂L/∂x",
+  "Epoch", "Step", "Learning Rate", "Loss Function", "Optimizer", "Adam", "SGD",
+  "Hyperparameter", "Tuning", "Overfitting", "Underfitting", "Regularization", "Noise Injection",
+
+  "DataFrame", "Pandas", "Numpy", "Sklearn", "PyTorch", "Keras", "TensorFlow", "LightGBM",
+  "XGBoost", "ROC-AUC", "Confusion Matrix", "Precision", "Recall", "F1-score", "Clustering",
+  "KMeans", "PCA", "t-SNE", "UMAP", "Feature Engineering", "One-Hot Encoding", "Label Encoding",
+  "Missing Values", "Normalization", "Standardization", "Scaling", "Outliers", "Imputation",
+
+  "Docker", "Kubernetes", "ONNX", "TorchScript", "Model Drift", "Inference", "Serving",
+  "Latency", "Throughput", "Pipeline", "MLflow", "Airflow",
+
+  "loss++", "404 Accuracy", "train()... again?!", "deploy.py", "coffee ≠ data", "NaN Attack",
+  "gradient leak", "you forgot to shuffle", "random_state=42", "early stopping", "Oops All Bias",
+  "Overfit Happens", "model.eval()", "await async inference", "🧠", "Glitching...", "eval() called"
 ];
+
 
 const headers = [
   "LOADING...",
