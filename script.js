@@ -44,7 +44,7 @@ wrappers.forEach((wrapper, i) => {
 
   inner.style.animation = `${direction} ${duration}s linear infinite`;
 
-  const randomTerms = shuffle(terms).slice(0, 6).join(" ⬢ ");
+  const randomTerms = shuffle(terms).slice(0, 12).join(" ⬢ ");
   inner.textContent = `${headers[i]} ⬢ ${randomTerms}`;
 });
 
