@@ -7,31 +7,32 @@ html, body {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 
 .marquee {
   position: absolute;
   white-space: nowrap;
-  will-change: transform;
   font-size: 18px;
   opacity: 0.4;
-  animation: scroll linear infinite;
 }
 
-.core-graphic {
-  width: 200px;
-  height: 200px;
-  opacity: 0.1;
-  position: absolute;
-  z-index: 0;
-}
-
-
-@keyframes scroll {
+@keyframes scroll-left {
   from { transform: translateX(100%); }
   to { transform: translateX(-100%); }
+}
+
+@keyframes scroll-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+.flying-gradient {
+  position: absolute;
+  font-size: 32px;
+  z-index: 10;
+  transition: top 0.5s ease-out, left 0.5s ease-out;
+  cursor: default;
+  text-shadow: 0 0 10px #00ffe0;
+  user-select: none;
 }
