@@ -10,21 +10,27 @@ html, body {
   position: relative;
 }
 
-.marquee {
+.marquee-wrapper {
   position: absolute;
+  left: 50%;
+  transform-origin: center;
+}
+
+.marquee-inner {
+  position: relative;
   white-space: nowrap;
   font-size: 18px;
   opacity: 0.4;
 }
 
 @keyframes scroll-left {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-200vw); }
 }
 
 @keyframes scroll-right {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
+  from { transform: translateX(-200vw); }
+  to   { transform: translateX(100vw); }
 }
 
 .flying-gradient {
