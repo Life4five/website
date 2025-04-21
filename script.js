@@ -1,3 +1,5 @@
+const resumeUpdateDate = "20.04.2025";
+
 const translations = {
   ru: {
     section_skills: "Навыки",
@@ -12,7 +14,8 @@ const translations = {
     nav_projects: "Проекты",
     nav_contacts: "Контакты",
     about_text: "Я студент по Data Science, изучаю Python и хочу развиваться в AI.",
-    lorem: "Привет! Тут будет рыба"
+    lorem: "Привет! Тут будет рыба",
+    cv_update: "Обновлено: " + resumeUpdateDate
   },
   en: {
     section_skills: "Skills",
@@ -27,7 +30,8 @@ const translations = {
     nav_projects: "Projects",
     nav_contacts: "Contacts",
     about_text: "I'm a Data Science student learning Python and aiming to grow in AI.",
-    lorem: "Hi! Placeholder goes here"
+    lorem: "Hi! Placeholder goes here",
+    cv_update: "Updated: " + resumeUpdateDate
   }
 };
 
