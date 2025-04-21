@@ -14,7 +14,7 @@ const translations = {
     nav_projects: "Проекты",
     nav_contacts: "Контакты",
     about_text: "Я студент по Data Science, изучаю Python и хочу развиваться в AI.",
-    lorem: "Привет! Тут будет рыба",
+    lorem: "Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.",
     cv_update: "Обновлено: " + resumeUpdateDate
   },
   en: {
@@ -30,7 +30,7 @@ const translations = {
     nav_projects: "Projects",
     nav_contacts: "Contacts",
     about_text: "I'm a Data Science student learning Python and aiming to grow in AI.",
-    lorem: "Hi! Placeholder goes here",
+    lorem: "The model isn’t confident this section matters - only a 56.2% prediction score. That’s below production threshold. But hey, the border looks nice already.",
     cv_update: "Updated: " + resumeUpdateDate
   }
 };
