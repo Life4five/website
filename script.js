@@ -5,6 +5,12 @@ const translations = {
     section_skills: "Навыки",
     section_projects: "Проекты",
     section_contacts: "Контакты",
+    contact_email: "Email: info@life4five.com",
+    contact_github: "GitHub: github.com/life4five",
+    contact_telegram: "Telegram: @life4five",
+    contact_kaggle: "Kaggle: kaggle.com/life4five",
+    contact_phone: "Телефон: +1 (234) 567-890",
+    contact_address: "Адрес: Москва, Россия",
     cv_title: "Резюме",
     cv_text: "Здесь можно скачать резюме",
     cv_download: "Скачать резюме (RU)",
@@ -15,12 +21,30 @@ const translations = {
     nav_contacts: "Контакты",
     about_text: "Я студент по Data Science, изучаю Python и хочу развиваться в AI.",
     lorem: "Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.",
-    cv_update: "Обновлено: " + resumeUpdateDate
+    cv_update: "Обновлено: " + resumeUpdateDate,
+    project_1_title: "Проект 1",
+    project_1_desc: "Описание проекта 1",
+    project_2_title: "Проект 2",
+    project_2_desc: "Описание проекта 2",
+    project_3_title: "Проект 3",
+    project_3_desc: "Описание проекта 3",
+    project_4_title: "Проект 4",
+    project_4_desc: "Описание проекта 4",
+    project_5_title: "Проект 5",
+    project_5_desc: "Описание проекта 5",
+    project_6_title: "Проект 6",
+    project_6_desc: "Описание проекта 6"
   },
   en: {
     section_skills: "Skills",
     section_projects: "Projects",
     section_contacts: "Contacts",
+    contact_email: "Email: info@life4five.com",
+    contact_github: "GitHub: github.com/life4five",
+    contact_telegram: "Telegram: @life4five",
+    contact_kaggle: "Kaggle: kaggle.com/life4five",
+    contact_phone: "Phone: +1 (234) 567-890",
+    contact_address: "Address: Moscow, Russia",
     cv_title: "CV",
     cv_text: "You can download the resume here",
     cv_download: "Download resume (EN)",
@@ -31,7 +55,19 @@ const translations = {
     nav_contacts: "Contacts",
     about_text: "I'm a Data Science student learning Python and aiming to grow in AI.",
     lorem: "The model isn’t confident this section matters - only a 56.2% prediction score. That’s below production threshold. But hey, the border looks nice already.",
-    cv_update: "Updated: " + resumeUpdateDate
+    cv_update: "Updated: " + resumeUpdateDate,
+    project_1_title: "Project 1",
+    project_1_desc: "Description of Project 1",
+    project_2_title: "Project 2",
+    project_2_desc: "Description of Project 2",
+    project_3_title: "Project 3",
+    project_3_desc: "Description of Project 3",
+    project_4_title: "Project 4",
+    project_4_desc: "Description of Project 4",
+    project_5_title: "Project 5",
+    project_5_desc: "Description of Project 5",
+    project_6_title: "Project 6",
+    project_6_desc: "Description of Project 6"
   }
 };
 
@@ -60,5 +96,18 @@ navItems.forEach(item => {
   item.addEventListener("click", () => {
     navItems.forEach(el => el.classList.remove("active"));
     item.classList.add("active");
+  });
+});
+
+function toggleMenu() {
+  const menu = document.querySelector("#burger_menu ul");
+  menu.classList.toggle("active");
+}
+
+// Collapse burger menu on navigation link click
+document.querySelectorAll("#burger_menu ul li a").forEach(link => {
+  link.addEventListener("click", () => {
+    const menu = document.querySelector("#burger_menu ul");
+    menu.classList.remove("active");
   });
 });
