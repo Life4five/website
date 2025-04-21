@@ -35,35 +35,30 @@ const translations = {
   }
 };
 
-  
 function setLanguage(lang) {
-  const elements = document.querySelectorAll("[data-i18n]");
+  const elements = [...document.querySelectorAll("[data-i18n]")];
+  const cvLink = document.getElementById("cv_link");
+  const langButtons = document.querySelectorAll(".lang-toggle");
+
   elements.forEach(el => {
     const key = el.getAttribute("data-i18n");
     el.textContent = translations[lang][key] || key;
   });
 
-  // 👇 Меняем ссылку на резюме
-  const cvLink = document.getElementById("cv_link");
   if (cvLink) {
     cvLink.href = lang === "ru" ? "./res/cv_ru.pdf" : "./res/cv_en.pdf";
   }
 
-  // 👇 Также не забудь переключать активный класс у кнопок
-  document.querySelectorAll(".lang-toggle").forEach(btn => {
+  langButtons.forEach(btn => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 }
 
-
-// Навигация: переключение активного пункта
-const navItems = document.querySelectorAll("#sidebar ul li");
+const navItems = [...document.querySelectorAll("#sidebar ul li")];
 
 navItems.forEach(item => {
-item.addEventListener("click", () => {
-  // Удаляем active у всех
-  navItems.forEach(el => el.classList.remove("active"));
-  // Добавляем active только к текущему
-  item.classList.add("active");
-});
+  item.addEventListener("click", () => {
+    navItems.forEach(el => el.classList.remove("active"));
+    item.classList.add("active");
+  });
 });

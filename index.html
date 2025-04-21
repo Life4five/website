@@ -5,36 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Life4five</title> 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="./img/logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="./img/logo.svg">
 </head>
 <body>
   <div class="content">
     <nav id="sidebar">
       <div id="logo">
-        <img src="./img/Life4five.svg" alt="">
+        <img src="./img/Life4five.svg" alt="Life4five Logo">
       </div>
       <ul>
         <li class="active">
           <a href="#about">
-            <span><img src="./img/about.svg" alt=""></span>
+            <img src="./img/about.svg" alt="About Icon">
             <span data-i18n="nav_about">О себе</span>
           </a>
         </li>
         <li>
           <a href="#skills">
-            <span><img src="./img/skills.svg" alt=""></span>
+            <img src="./img/skills.svg" alt="Skills Icon">
             <span data-i18n="nav_skills">Навыки</span>
           </a>
         </li>
         <li>
           <a href="#projects">
-            <span><img src="./img/projects.svg" alt=""></span>
+            <img src="./img/projects.svg" alt="Projects Icon">
             <span data-i18n="nav_projects">Проекты</span>
           </a>
         </li>
         <li>
           <a href="#contacts">
-            <span><img src="./img/contacts.svg" alt=""></span>
+            <img src="./img/contacts.svg" alt="Contacts Icon">
             <span data-i18n="nav_contacts">Контакты</span>
           </a>
         </li>
@@ -42,63 +42,71 @@
 
       <div id="language">
         <button class="lang-toggle active" data-lang="ru" onclick="setLanguage('ru')">
-          <img src="./img/russian.svg" alt="RU"/>
+          <img src="./img/russian.svg" alt="Russian Flag">
         </button>
         <button class="lang-toggle" data-lang="en" onclick="setLanguage('en')">
-          <img src="./img/english.svg" alt="EN"/>
+          <img src="./img/english.svg" alt="English Flag">
         </button>
       </div>      
     </nav>
 
-    <div id="center_pad">
-      <div data-i18n="lorem" id="about">
+    <main id="center_pad">
+      <section id="about" data-i18n="lorem">
         Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.
-      </div>
+      </section>
     
-      <div class="section-divider" id="skills">
-        <span data-i18n="section_skills">Навыки</span>
-      </div>
-      <div data-i18n="lorem">
-        Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.
-      </div>
+      <section id="skills">
+        <div class="section-divider">
+          <span data-i18n="section_skills">Навыки</span>
+        </div>
+        <p data-i18n="lorem">
+          Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.
+        </p>
+      </section>
     
-      <div class="section-divider" id="projects">
-        <span data-i18n="section_projects">Проекты</span>
-      </div> 
-      <div data-i18n="lorem" id="contacts">
-        Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.
-      </div>
+      <section id="projects">
+        <div class="section-divider">
+          <span data-i18n="section_projects">Проекты</span>
+        </div>
+        <p data-i18n="lorem">
+          Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.
+        </p>
+      </section> 
+      
+      <section id="contacts">
+        <div class="section-divider">
+          <span data-i18n="section_contacts">Контакты</span>
+        </div>
+        <p data-i18n="lorem">
+          Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.
+        </p>
+      </section>
+    </main>
     
-      <div class="section-divider">
-        <span data-i18n="section_contacts">Контакты</span>
-      </div> 
-    </div>
-    
-    <section id="right_pad">
+    <aside id="right_pad">
       <div class="container">
         <div class="box" id="views">
           <div>
-            <img src="./img/views.svg" alt="Views icon">
+            <img src="./img/views.svg" alt="Views Icon">
             <p id="view-count">8 000 000 000</p>
           </div>
         </div>
     
         <div class="box" id="cv_panel">
           <p><b data-i18n="cv_title">Резюме</b></p>
-          <div data-i18n="cv_text" style="margin-bottom: 8px">Здесь можно скачать резюме</div>
+          <p data-i18n="cv_text">Здесь можно скачать резюме</p>
           <a href="./res/cv_ru.pdf" id="cv_link">
-            <img src="./img/download.svg" alt="Download icon">
+            <img src="./img/download.svg" alt="Download Icon">
             <span data-i18n="cv_download">Скачать резюме (RU)</span>
           </a>
-          <div data-i18n="cv_update" style="margin-top: 8px; color:#9a9a9a">Обновлено: 20.04.2025</div>
+          <p data-i18n="cv_update" style="color:#9a9a9a">Обновлено: 20.04.2025</p>
         </div>
     
-        <div class="box" data-i18n="lorem"><p>Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.</p></div>
-        <div class="box" data-i18n="lorem"><p>Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.</p></div>
-        <div class="box" data-i18n="lorem"><p>Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.</p></div>
-        <div class="box" data-i18n="lorem"><p>Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.</p></div>
+        <div class="box" data-i18n="lorem">
+          <p>Пока модель не уверена, что эта секция имеет значение. Она предсказывает контент с вероятностью 56.2% - этого недостаточно для продакшна. Зато я уже сделал красивую рамку.</p>
+        </div>
       </div>
-    </section>    
+    </aside>    
   </div>
 
   <footer class="footer">
