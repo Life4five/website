@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 - Life4five</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
+</head>
+<body>
+  <div id="burger_menu">
+    <img src="../img/Life4five.svg" alt="Logo" style="max-height: 40px;">
+    <button onclick="toggleMenu()">☰</button>
+    <ul>
+      <li><a href="../index.html#about" data-i18n="nav_about">О себе</a></li>
+      <li><a href="../index.html#skills" data-i18n="nav_skills">Навыки</a></li>
+      <li><a href="../index.html#projects" data-i18n="nav_projects">Проекты</a></li>
+      <li><a href="../index.html#contacts" data-i18n="nav_contacts">Контакты</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <nav id="sidebar">
+      <div id="logo">
+        <a href="../index.html">
+          <img src="../img/Life4five.svg" alt="Life4five Logo">
+        </a>
+      </div>
+      <ul>
+      <li>
+        <a href="#overview">
+        <img src="https://dummyimage.com/24x24" alt="Overview Icon">
+        <span data-i18n="nav_overview">Обзор</span>
+        </a>
+      </li>
+      <li>
+        <a href="#goals-hypotheses">
+        <img src="https://dummyimage.com/24x24" alt="Goals and Hypotheses Icon">
+        <span data-i18n="nav_goals_hypotheses">Цели и гипотезы</span>
+        </a>
+      </li>
+      <li>
+        <a href="#data">
+        <img src="https://dummyimage.com/24x24" alt="Data Icon">
+        <span data-i18n="nav_data">Данные</span>
+        </a>
+      </li>
+      <li>
+        <a href="#methods">
+        <img src="https://dummyimage.com/24x24" alt="Methods Icon">
+        <span data-i18n="nav_methods">Методы</span>
+        </a>
+      </li>
+      <li>
+        <a href="#results">
+        <img src="https://dummyimage.com/24x24" alt="Results Icon">
+        <span data-i18n="nav_results">Результаты</span>
+        </a>
+      </li>
+      <li>
+        <a href="#conclusions">
+        <img src="https://dummyimage.com/24x24" alt="Conclusions Icon">
+        <span data-i18n="nav_conclusions">Выводы</span>
+        </a>
+      </li>
+      <li>
+        <a href="#related-projects-sources">
+        <img src="https://dummyimage.com/24x24" alt="Related Projects and Sources Icon">
+        <span data-i18n="nav_related_projects_sources">Связанные проекты / источники</span>
+        </a>
+      </li>
+      </ul>
+
+      <div id="language">
+      <button class="lang-toggle active" data-lang="ru" onclick="setLanguage('ru')">
+        <img src="../img/russian.svg" alt="Russian Flag">
+      </button>
+      <button class="lang-toggle" data-lang="en" onclick="setLanguage('en')">
+        <img src="../img/english.svg" alt="English Flag">
+      </button>
+      </div>
+    </nav></a>
+
+    <main id="center_pad">
+      <section id="project-details">
+        <h1 data-i18n="project_1_title">Project 1</h1>
+        <p data-i18n="project_1_desc">Развёрнутое описание проекта. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p><b data-i18n="project_update_date">Обновлено:</b> <span data-i18n="project_1_date">01.01.2025</span></p>
+        <p><b data-i18n="project_content">Содержание проекта:</b></p>
+        <ul>
+          <li data-i18n="project_item_1">Пункт 1</li>
+          <li data-i18n="project_item_2">Пункт 2</li>
+          <li data-i18n="project_item_3">Пункт 3</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside id="right_pad">
+      <div class="container">
+        <div class="box">
+          <h2 data-i18n="project_stats">Статистика и факты</h2>
+          <ul>
+            <li><b data-i18n="fact_1">Факт 1:</b> <span data-i18n="fact_1_text">Пример текста</span></li>
+            <li><b data-i18n="fact_2">Факт 2:</b> <span data-i18n="fact_2_text">Пример текста</span></li>
+            <li><b data-i18n="fact_3">Факт 3:</b> <span data-i18n="fact_3_text">Пример текста</span></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <p data-i18n="footer_text">© 2025 Life4five. Сделано с ❤</p>
+  </footer>
+  <script src="../script.js"></script>
+  <script src="../translations.js"></script>
+</body>
+</html>
